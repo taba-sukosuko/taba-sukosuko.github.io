@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>AR de Quiz</title>
+        <script src="./js/aframe.min.js"></script>
+        <script src="./js/aframe-ar.js"></script>
+    </head>
+   
+    <body style='margin : 0px; overflow: hidden;'>
+        <a-assets>
+            <a-asset-item id="moti-obj" src="./static/model/鏡餅 v3.obj"></a-asset-item>
+            <a-asset-item id="moti-mtl" src="./static/model/鏡餅 v3.mtl"></a-asset-item>
+        </a-assets>
+        
+        <a-scene embedded arjs="debugUIEnabled:false;">
+            <a-marker preset='custom' type='pattern' url="./static/Marker/pattern-TShin.patt">
+                <a-box position="0 0.5 0" wireframe="true"></a-box>
+            </a-marker>
+
+            <a-marker preset="hiro">
+                <a-entity position="0 1.7 0" scale="0.4 0.4 0.4" rotation ="0 -270 20"
+                    animation__vr_rotation="property:rotation; from:0 -290 20; to:0 70 20; dur:8000; easing:linear; loop:true;">
+                    <a-obj-model id="moti" src="#moti-obj" mtl="#moti-mtl" position="0 0 0" scale="0.03 0.03 0.03" rotation="-60 0 0"></a-obj-model>
+                </a-entity>
+            </a-marker>
+
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
