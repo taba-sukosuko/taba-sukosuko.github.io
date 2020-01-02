@@ -26,6 +26,8 @@
                     scale="0.02 0.02 0.02" 
                     rotation="-90 0 90">
                 </a-obj-model>
+                
+                <a-box src="./static/img/HNY.png"position='0 0 1.5' scale="3 1 1" id="res"></a-box>
             </a-marker>
             
             <a-marker preset="hiro">
@@ -34,5 +36,26 @@
             
             <a-entity camera></a-entity>
         </a-scene>
+        
+        <div style="position: fixed; bottom: 150px;">
+            <button type="button" id="b1">あけおめ</button>
+            <button type="button" id="b2">弟たち</button>
+            <button type="button" id="b3">父、母</button>
+        </div>
+        
+        <script>
+            $(function() {
+                $('#b1').click(function(e) {
+                    $('#res').attr('src', './static/img/HNY.png');
+                });
+                $('#b2').click(function(e) {
+                    $('#res').attr('src', './static/img/brother.png');
+                });
+                $('#b3').click(function(e) {
+                    $('#res').attr('src', './static/img/Parent.png');
+                });
+            });
+        </script>
+        
     </body>
 </html>
